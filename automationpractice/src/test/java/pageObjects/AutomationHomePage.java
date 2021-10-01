@@ -23,4 +23,8 @@ public class AutomationHomePage extends PageObject {
 		
 		return new AutomationLoginPage(driver, URL);
 	}
+
+	public AutomationProductListingPage clickDressesButton() {
+		return new AutomationProductListingPage(this.driver, this.URL);
+	}
 }
