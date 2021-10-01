@@ -68,5 +68,24 @@ public class AutomationLoginPage extends PageObject {
 	public String getField(int index) {
 		return loginForm.get(index).getValue();
 	}
+	
+	public void tryCreateButton() {
+		clickCreate();
+	}
+	
+	private void clickCreate() {
+		WebElement button = getButton(buttonIds[1]);
+		
+		button.click();
+	}
+	
+	public String readCreateError() {
+		return getCreateError().getText().trim();
+	}
+	
+	public WebElement getCreateError() {
+		WebElement ele = driver.findElement(By.xpath("//div[@id='create_account_error']/ol/li"));
+		return ele;
+	}
 
 }

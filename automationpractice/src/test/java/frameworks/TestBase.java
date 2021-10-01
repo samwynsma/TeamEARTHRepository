@@ -37,10 +37,10 @@ public abstract class TestBase {
 		getDriver().navigate().to(this.baseURL);
 	}
 	
-	@Test
-	public void canLaunchWebdriver() {
-		System.out.println(settings.browserType);
-	}
+//	@Test
+//	public void canLaunchWebdriver() {
+//		System.out.println(settings.browserType);
+//	}
 	
 	@After
 	public void Cleanup() {
