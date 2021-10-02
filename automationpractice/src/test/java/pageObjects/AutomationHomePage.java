@@ -8,7 +8,6 @@ import frameworks.PageObject;
 
 public class AutomationHomePage extends PageObject {
 	
-	private final WebElement loginButton = driver.findElement(By.xpath("//a[@class='login']"));
 	private final WebElement dressButton = driver.findElement(By.xpath("//div/ul/li/a[@title='Dresses']"));
 
 	public AutomationHomePage(WebDriver driver, String URL) {
@@ -16,11 +15,11 @@ public class AutomationHomePage extends PageObject {
 	}
 	
 	public WebElement getLoginButton() {
-		return this.loginButton;
+		return driver.findElement(By.xpath("//a[@class='login']"));
 	}
 	
 	public AutomationLoginPage clickLogin() {
-		this.loginButton.click();
+		getLoginButton().click();
 		
 		return new AutomationLoginPage(driver, URL);
 	}
