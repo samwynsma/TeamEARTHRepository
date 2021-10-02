@@ -88,4 +88,27 @@ public class AutomationLoginPage extends PageObject {
 		return ele;
 	}
 
+	public void tryLogin() {
+		clickLogin();
+	}
+	
+	public String readLoginError() {
+		return getLoginError().getText().trim();
+	}
+
+	private WebElement getLoginError() {
+		WebElement ele = driver.findElement(By.xpath("//div[@id='center_column']/div[contains(@class, 'alert-danger')]/ol/li"));
+		return ele;
+	}
+	
+	public void findLoginForm() {
+		if (!loginForm.isEmpty()) {
+			loginForm.clear();
+		}
+		
+		for (String id: ids) {
+			WebElement element = driver.findElement(By.xpath("//input[@id='"+id+"']"));
+			loginForm.add(new TextBoxControlExtension(element));
+		}
+	}
 }
