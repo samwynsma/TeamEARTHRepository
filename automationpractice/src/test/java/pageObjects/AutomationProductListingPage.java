@@ -10,6 +10,7 @@ import frameworks.PageObject;
 public class AutomationProductListingPage extends PageObject {
 	
 	private final WebElement printedDressImage = driver.findElement(By.xpath("//img[@alt='Printed Dress']"));
+	private final WebElement printedDressName = driver.findElement(By.xpath("//a[@class='product-name'][@title='Printed Dress']"));
 
 	protected AutomationProductListingPage(WebDriver driver, String URL) {
 		super(driver, URL);
@@ -24,4 +25,9 @@ public class AutomationProductListingPage extends PageObject {
 		return new AutomationProductDetailsPage(this.driver, this.URL);
 	}
 
+	public AutomationProductDetailsPage clickPrintedDressName() {
+		printedDressName.click();
+		
+		return new AutomationProductDetailsPage(this.driver, this.URL);
+	}
 }
