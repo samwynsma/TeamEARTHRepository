@@ -1,0 +1,179 @@
+Test Case ID: FR004-01 Product Listing
+Title: Can view product information
+Summary: User can view product information.
+
+Preconditions:
+None
+
+Positive Path Steps:
+1. Navigate to the product information page of a product.
+2. Make sure that the product shows all of the product information on said page.
+
+Expected: Product information should be visible.
+
+Negative Path Steps:
+1. Don't navigate to product information page of a product.
+
+Expected: Product information should not be visible.
+
+
+Test Case ID: FR004-2 Product Listing
+Title: Can click on products to view more information.
+Summary: Buyers should be able to click on a product title and image and be able to navigate to the product detail page to find more information on the product.
+
+Preconditions:
+None
+
+Positive Path Steps:
+1. Navigate to any page with products on it.
+2. On a page with products, hover over any product.
+3. Click on the product image. Expected: Should be taken to a page that shows more details about the product in question.
+4. Go back to the page with products, then click on the product name. Expected: Same as with step 3.
+
+Expected: Buyers should be able to go to a page with product details from the shopping page.
+
+Negative Path Steps:
+1. Navigate to any page with products on it.
+2. On a page with products, hover over any product.
+3. Do not click on the product image.
+
+Expected: The page should not change.
+
+
+Test Case ID: FR005-04 Product Details 
+Title: User should be able to add product to shopping cart and wishlist.
+
+Preconditions: User must be logged in (for wishlist)
+
+Positive Path 1 Steps:
+1. Navigate to the product details page of a product.
+2. Add the product to the shopping cart.
+3. Navigate to shopping cart page.
+
+Expected: Product should appear on the shopping cart page.
+
+Positive Path 2 Steps:
+1. Navigate to the product details page of a product.
+2. Add the product to the wishlist.
+3. Navigate to the wishlist page.
+
+Expected: Product should appear in the wishlist.
+
+Negative Path Steps:
+1. Navigate to the product details page of a product.
+2. Do not add te product to the shopping cart.
+3. Navigate to the shopping cart page.
+
+Expected: The item should not appear in the shopping cart.
+
+
+Test Case ID: FR007-1 Shopping Cart
+Title: Add to shopping cart.
+Summary: Users should be able to add a product to their shopping cart from the product details page.
+
+Preconditions:
+None
+
+Positive Path Steps:
+1. Navigate to any product's product details page.
+2. Search for an "Add to cart" icon on the product details page.
+3. Click on the "Add to cart" icon. Expected: Should add the item to the cart.
+4. Check the cart for the item that was added.
+
+Expected: The item should be added to the cart and viewable in the cart.
+
+Negative Path Steps:
+1. Navigate to any products's product details page.
+2. Without adding the item to the cart, check the cart for the item being added.
+
+Expected: The item should not be added to the cart.
+
+
+Test Case ID: FR003.B1 P1 Product Search
+Title: Search for products.
+Summary: User should be able to search for the product using categories, keywords, and filters/sorting options.
+
+Preconditions:
+None
+
+Positive Path 1 Steps:
+1. Click on "Women" to open up women's clothing.
+2. Click on "Tops" to specifically select Tops.
+3. Click on "Dresses" to open up dresses.
+4. Click on "Casual Dresses" to narrow the search.
+
+Expected: All category and sub-category selections should generate specified results.
+
+Positive Path 2 Steps:
+1. In the search bar at the top of the page, type in "Printed Dress"
+2. Click the magnifying glass icon to execute the search.
+
+Expected: All printed dresses should appear (last I checked, the number was 5)
+
+Positive Path 3 Steps:
+1. Click on "Women" to open up women's clothing.
+2. In the "Catalog" section on the side of the page, select various filters.
+3. Observe that the results match the filters selected.
+
+Expected: Only items that match the filters should appear.
+
+Negative Path Steps:
+1. Do not type anything in the search bar at the top of the page.
+2. Click the magnifying glass to execute the search.
+
+Expected: An warning should appear, instructing the user to enter something in the search bar.
+
+
+Test Case ID: FR005.B6 Add Item to Wishlist
+Title: Login to Add Item to Wishlist
+Summary: The user will not be able to add the product to wishlist without login.
+
+Preconditions: 
+User must not be logged in.
+
+Positive Path Steps:
+1. Navigate to any product's product details page.
+2. Select "Add to wishlist"
+3. Dismiss the resulting failure message.
+4. Click "sign in" to bring up the sign-in page.
+5. Sign in, then navigate back to product's product details page.
+6. Select "Add to wishlist."
+7. Dismiss the resulting success message.
+8. Click on username, then click on wishlist to navigate to wishlist.
+
+Expected: The item should appear on the wishlist.
+
+Negative Path Steps:
+1. Navigate to any product's product details page.
+2. Select "Add to wishlist."
+3. Dismiss the resulting failure message.
+4. Again select "Add to wishlist."
+
+Expected: The failure message should show up again.
+
+
+Test Case ID: FR013.B1 Contact Support
+Title: Email Support
+Summary: Buyers will be able to contact support team via email regarding any problems.
+
+Preconditions:
+None
+
+Positive Path 1 Steps:
+1. Select "Contact us" to bring up he contact us page.
+2. Fill in subject heading, email address, order reference, and message.
+3. Click "Send" to send the message to customer support.
+
+Expected: A message should be sent to customer support.
+
+Positive Path 2 Steps:
+1. On the bottom of the page, select the email address listed under "Store Information"
+
+Expected: A prompt to send an email or use an email sending service should appear.
+
+Negative Path:
+1. Select "Contact us" to bring up the contact us page.
+2. Do not fill in any blanks.
+3. Click "Send" to send a nonexistent message to customer support.
+
+Expected: An alert should show up, requiring the user to input information.
