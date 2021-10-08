@@ -1,0 +1,177 @@
+Name: Check customer login with valid credentials
+ID: 1
+Summary: Making sure the user can sign in by entering their email and password by going to the sign-in page and signing in.
+
+Positive Path
+Pre-conditions:
+1) Have an existing user's information at hand
+2) Start on page with sign in button
+
+
+Positive Path Steps:
+1) Click on the sign-in button
+2) Enter email in email address field under the "Already Registered" section
+3) Enter password in password field under the "Already Registered" section
+4) Click sign in button
+Expected result: User is transferred to profile page and is successfully signed in
+
+Negative Path
+Pre-conditions:
+1) Start on page with sign in button
+
+
+Negative Path Steps:
+1) Click on the sign-in button
+Expected result: Error message comes up
+
+
+Related to: FR-001 B1
+
+
+
+Name: Check account creation with valid credentials
+ID: 2
+Summary: Making sure a customer can create an account on the website by going to the sign-in page, entering an email in the "Create An Account" section, then filling out the credentials to create a user.
+
+Positive Path
+Pre-conditions:
+1) Have following placeholder information to insert into forms: First name, last name, email, contact number, password, address
+2) Start on page with sign in button
+
+Positive Path Steps
+1) Click on the sign-in button
+2) Enter email in email address field under the "Create An Account" section and click the "Create an account" button
+3) On the new page, enter the required information using info gathered for the preparation of this test: First name into first name field, password into password field, address into address fields, etc.
+4) Click on the Register button
+Expected result: User is taken to their profile page, signed in
+
+Negative Path 
+Pre-conditions:
+1) Start on page with sign in button
+
+Negative Path Steps
+1) Click on the sign-in button
+2) Click on the "Create an account" button 
+Expected result: Error message appears
+
+Related to: FR-002 B1
+
+
+
+Name: Check adding products to shopping carts from the product details page and proceeding to checkout with a cart
+ID: 5
+Summary: First navigating to the product details page of a product, adding it to a shopping cart, and verifying that the product was added to the cart. Then, proceeding to checkout with the cart.
+
+Positive Path
+Pre-conditions:
+
+Steps:
+1) Find the first listed product on the home page
+2) Click on the title or image of the product
+3) At this point the product details page should be open. Add the product to the cart
+3a) Optionally, go back to the home page and repeat steps 1-3 but with another product.
+4) Click on Cart in the top-right to visit the Shopping-Cart Summary page.
+6) Verify that the item(s) you added to the cart are present on this page.
+7) Click the Proceed to Checkout button in the bottom right.
+Expected result: A cart with at least one item proceeds to checkout (in other words, reaching the Sign in or Address pages of the checkout process).
+
+Negative Path
+Pre-conditions:
+
+Steps:
+1) Click on Cart in the top-right to visit the Shopping-Cart Summary page.
+Expected result: no option to proceed to checkout
+
+Related to: FR007 - B1, B4
+
+
+
+Name: Buyer is required to login into website for checkout and payment.
+ID: 6
+Summary: With an item in a cart, go to the checkout page and proceed past the initial page. Then enter login credentials, hit the Sign In button, and proceed to the Address page.
+
+Positive Path
+Pre-conditions:
+1) Have at least one item in cart
+2) Have login credentials at hand
+
+Steps:
+1) Go to shopping cart
+2) Proceed to sign-in page, enter login credentials and click the Sign In Button
+Expected result: user is taken the address page of checkout
+
+Negative Path
+Positive Path
+Pre-conditions:
+1) Have at least one item in cart
+
+Steps:
+1) Go to shopping cart
+2) Proceed to sign-in page, hit the Sign In button
+Expected result: Error message pops up
+
+Related to: FR008.B2
+
+
+Name: User can reset password
+Summary: Making sure the user has the option to reset their password if they forgot it, given that they can provide their email to which the instructions for resetting their password can be sent.
+
+Positive Path
+Pre-conditions:
+1) Have an existing user's email at hand
+2) Have a new password to replace the old one at hand
+Positive Path Steps:
+1)Click on the sign-in button
+2)Click the “Forgot your password?” hyperlink under the Already Registered? section
+3)Enter email in textbox and click Retrieve password button
+4)Open email, find the email from the website, click the reset password link
+5)Enter the new password into both fields and submit
+6)Go to Login page
+7)Enter email and password into textboxes under Already Registered? section
+8)Click Sign In button
+Expected result: User is brought to profile page (successful login with new credentials)
+
+Negative Path
+Pre-conditions:
+N/A
+Negative Path Steps:
+1)Click on the sign-in button
+2)Click the “Forgot your password?” hyperlink under the Already Registered? section
+3)Click “Retrieve password” button
+Expected result: Error message about “Invalid email address” should pop up.
+
+Related to: FR-001 B2
+
+
+Name: User required to enter billing and shipping before checkout
+Summary: When the user goes to checkout with one or multiple items, they should be required to enter their billing and shipping information before they enter payment information and place the order.
+
+Positive Path
+Pre-conditions:
+1)Be signed into an existing user’s account
+2)Have a cart with at least one item in it
+3)(Optional) If existing user does not have a specified address, have address information at hand.
+Positive Path Steps:
+1)Click on the Cart button/tab
+2)Click on the Proceed to checkout button
+3)If the existing user does not have a delivery and/or billing address, enter those. 
+4)Click on Proceed to checkout button again.
+5)Select a shipping option
+6)Agree to the terms of service
+7)Click on Proceed to checkout button again.
+Expected result: User is brought to the payment page of the checkout process
+
+Negative Path
+Pre-conditions:
+1)Be signed into an existing user’s account
+2)Have a cart with at least one item in it
+3)(Optional) If existing user does not have a specified address, have address information at hand.
+Negative Path Steps:
+1)Click on the Cart button/tab
+2)Click on the Proceed to checkout button
+3)If the existing user does not have a delivery and/or billing address, enter those. 
+4)Click on Proceed to checkout button again.
+5)Click on Proceed to checkout button again.
+Expected result: Error message about “Select shipping option” or “You must agree to the terms of service” should pop up.
+
+Related to: FR-008 B3
