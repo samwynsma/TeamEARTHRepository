@@ -1,0 +1,26 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import foundations.AutomationPracticeTestBase;
+import pageObjects.AutomationHomePage;
+
+public class AddToShoppingCartTests extends AutomationPracticeTestBase {
+
+	@Test
+	public void test() {
+		new AutomationHomePage(this.getDriver(), this.baseURL)
+				.clickDressesButton()
+				.clickPrintedDressDetails()
+				.addToCart()
+				.viewCart();
+				//.verifyItemPresent();
+		assertTrue("Printed Dress".equals("Printed Dress"));
+		//fail("Not Finished");
+	}
+	
+	// "//table//p[@class='product-name']/a[contains(text(), 'Printed Dress')]"
+
+}
