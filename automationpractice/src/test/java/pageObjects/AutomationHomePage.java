@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -28,5 +29,15 @@ public class AutomationHomePage extends PageObject {
 		this.dressButton.click();
 		
 		return new AutomationProductListingPage(this.driver, this.URL);
+	}
+	
+	public WebElement getCartButton() {
+		return driver.findElement(By.xpath("//a[@title='View my shopping cart']"));
+	}
+	
+	public AutomationShoppingCartSummary clickCart() {
+		getCartButton().click();
+		
+		return new AutomationShoppingCartSummary(this.driver, this.URL);
 	}
 }
