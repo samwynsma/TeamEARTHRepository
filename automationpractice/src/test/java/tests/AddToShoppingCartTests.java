@@ -10,7 +10,7 @@ import pageObjects.AutomationHomePage;
 public class AddToShoppingCartTests extends AutomationPracticeTestBase {
 
 	@Test
-	public void test() {
+	public void addToShoppingCartFromProductDetailsTest() {
 		new AutomationHomePage(this.getDriver(), this.baseURL)
 				.clickDressesButton()
 				.clickPrintedDressDetails()
