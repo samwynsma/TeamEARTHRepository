@@ -1,0 +1,32 @@
+Team Earth Sprint 2 Retrospective
+
+Velocity comparison
+1: 24/34 points completed
+2: 28/38 points completed
+
+Sam
++ Manual Tests done
++ Learning about Jira
++ CI/CD Pipeline Implemented
+
+- Reporting as much as possible
+- Under estimated Jira task 
+
+Matias
++ Planning process was good
+
+- Automation test blocker
+- Carryover issues not resolved
+
+Action Items:
+- Reporting as much as possible
+Remedy: Team will report more often
+
+- Under estimated Jira task 
+Remedy: Proper story point estimates. More analysis on the story if it's a unfamiliar technology.
+
+- Automation test blocker
+Remedy: Ask automation dev lead for help.
+
+- Carryover issues not resolved
+Remedy: Commit to less work. Target ~20 points for S3.
