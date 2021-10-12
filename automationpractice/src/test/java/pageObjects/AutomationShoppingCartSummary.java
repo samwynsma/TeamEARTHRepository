@@ -32,4 +32,9 @@ public class AutomationShoppingCartSummary extends PageObject {
 		
 		return new AutomationShoppingCartAddress(this.driver, this.URL);
 	}
+
+	public String verifyItemPresent() {
+		WebElement shoppingCartItem = driver.findElement(By.xpath("//table//p[@class='product-name']/a[contains(text(), 'Printed Dress')]"));
+		return shoppingCartItem.getText();
+	}
 }
