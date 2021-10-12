@@ -11,16 +11,13 @@ public class AddToShoppingCartTests extends AutomationPracticeTestBase {
 
 	@Test
 	public void addToShoppingCartFromProductDetailsTest() {
-		new AutomationHomePage(this.getDriver(), this.baseURL)
+		String productName = new AutomationHomePage(this.getDriver(), this.baseURL)
 				.clickDressesButton()
 				.clickPrintedDressDetails()
 				.addToCart()
-				.viewCart();
-				//.verifyItemPresent();
-		assertTrue("Printed Dress".equals("Printed Dress"));
-		//fail("Not Finished");
+				.viewCart()
+				.verifyItemPresent();
+		assertTrue("Printed Dress".equals(productName));
 	}
-	
-	// "//table//p[@class='product-name']/a[contains(text(), 'Printed Dress')]"
 
 }
