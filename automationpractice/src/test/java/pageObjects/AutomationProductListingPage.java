@@ -37,11 +37,13 @@ public class AutomationProductListingPage extends PageObject {
 		WebElement addToCartButton = driver.findElement(By.xpath("//button[@class='exclusive']"));
 		addToCartButton.click();
 		
-		AutomationProductListingPage page = new AutomationProductListingPage(this.driver, this.URL);
-		WebElement proceedButton = page.driver.findElement(By.xpath("//a[title='Proceed to checkout')]"));
-		proceedButton.click();
+		driver.navigate().to(this.URL);
+//		AutomationProductListPage page = new AutomationProductListingPage(this.driver, this.URL);
+//		WebElement proceedButton = page.driver.findElement(By.xpath("//a[title='Proceed to checkout')]"));
+//		proceedButton.click();
+		//"//span[@class='cross']"
 		
-		return new AutomationShoppingCartSummary(this.driver, this.URL);
+		return new AutomationHomePage(this.driver, this.URL).clickCart();
 	}
 	
 	private WebElement getPrintedDressImage() {

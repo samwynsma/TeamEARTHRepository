@@ -27,14 +27,14 @@ public class ProceedToCheckoutTests extends AutomationPracticeTestBase {
 		assertEquals(expectedURL, currentURL);
 	}
 	
-//	@Test
-//	public void checkoutNeedsItems() {
-//		String expected = "Your shopping cart is empty.";
-//		
-//		AutomationShoppingCartSummary page = new AutomationHomePage(getDriver(), this.baseURL).clickCart();
-//		
-//		String actual = page.getWarning();
-//		
-//		assertEquals(expected, actual);
-//	}
+	@Test
+	public void checkoutNeedsItems() {
+		String expected = "Your shopping cart is empty.";
+		
+		AutomationShoppingCartSummary page = new AutomationHomePage(getDriver(), this.baseURL).clickCart();
+		
+		String actual = page.getWarning();
+		
+		assertEquals(expected, actual);
+	}
 }

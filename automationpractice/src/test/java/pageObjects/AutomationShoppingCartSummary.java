@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -21,10 +22,12 @@ public class AutomationShoppingCartSummary extends PageObject {
 	}
 	
 	private WebElement getProceedButton() {
-		return driver.findElement(By.xpath("//a[@title='Proceed to checkout']"));
+		return driver.findElement(By.xpath("//span/parent::a[contains(@class, 'standard-checkout')]"));
 	}
 	
 	public AutomationShoppingCartAddress clickProceedButton() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)", "");
 		getProceedButton().click();
 		
 		return new AutomationShoppingCartAddress(this.driver, this.URL);
