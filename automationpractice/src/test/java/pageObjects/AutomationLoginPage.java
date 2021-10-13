@@ -35,13 +35,13 @@ public class AutomationLoginPage extends PageObject {
 		return new AutomationProfilePage(driver, URL);
 	}
 	
-	private void clickLogin() {
+	protected void clickLogin() {
 		WebElement button = getButton(buttonIds[0]);
 		
 		button.click();
 	}
 
-	private WebElement getButton(String id) {
+	protected WebElement getButton(String id) {
 		return driver.findElement(By.xpath("//button[@id='"+id+"']"));
 	}
 
