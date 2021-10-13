@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import frameworks.PageObject;
 
 public class AutomationProductDetailsPage extends PageObject {
+	
+	private String wishlistMessage = "";
 
 	protected AutomationProductDetailsPage(WebDriver driver, String URL) {
 		super(driver, URL);
@@ -35,5 +37,26 @@ public class AutomationProductDetailsPage extends PageObject {
 		viewCartButton.click();
 		
 		return new AutomationShoppingCartSummary(this.driver, this.URL);
+	}
+
+	public AutomationProductDetailsPage addToWishlist() {
+		WebElement addToWishlistButton = driver.findElement(By.xpath("//a[@id='wishlist_button']"));
+		addToWishlistButton.click();
+		WebElement closeBox = driver.findElement(By.xpath("//a[@title='Close']"));
+		this.wishlistMessage = driver.findElement(By.xpath("//a[@title='Close']/..")).getText();
+		closeBox.click();
+		
+		return this;
+	}
+
+	public AutomationProfilePage clickOnUsername() {
+		WebElement usernameButton = driver.findElement(By.xpath("//a[@title='View my customer account']"));
+		usernameButton.click();
+		
+		return new AutomationProfilePage(this.driver, this.URL);
+	}
+
+	public String getWishlistMessageText() {
+		return this.wishlistMessage;
 	}
 }

@@ -21,4 +21,11 @@ public class AutomationProfilePage extends PageObject {
 	private WebElement getLogo() {
 		return driver.findElement(By.xpath("//a[@title='My Store']"));
 	}
+
+	public AutomationWishlistListingPage viewWishlist() {
+		WebElement wishlistButton = driver.findElement(By.xpath("//a[@title='My wishlists']"));
+		wishlistButton.click();
+		
+		return new AutomationWishlistListingPage(this.driver, this.URL);		
+	}
 }
