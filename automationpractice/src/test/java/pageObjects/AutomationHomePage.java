@@ -40,4 +40,13 @@ public class AutomationHomePage extends PageObject {
 		
 		return new AutomationShoppingCartSummary(this.driver, this.URL);
 	}
+
+	public AutomationSearchResultsPage enterKeywordAndSubmit(String submitText) {
+		WebElement searchBox = driver.findElement(By.xpath("//input[@name='search_query']"));
+		searchBox.sendKeys(submitText);
+		WebElement submitBox = driver.findElement(By.xpath("//button[@name='submit_search']"));
+		submitBox.click();
+		
+		return new AutomationSearchResultsPage(this.driver, this.URL);
+	}
 }
