@@ -111,4 +111,14 @@ public class AutomationLoginPage extends PageObject {
 			loginForm.add(new TextBoxControlExtension(element));
 		}
 	}
+	
+	public AutomationResetPass clickForgotLink() {
+		getForgotLink().click();
+		
+		return new AutomationResetPass(this.driver, this.URL);
+	}
+
+	private WebElement getForgotLink() {
+		return driver.findElement(By.xpath("//a[@title='Recover your forgotten password']"));
+	}
 }
