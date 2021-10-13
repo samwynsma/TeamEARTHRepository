@@ -94,4 +94,52 @@ public class ProceedToCheckoutTests extends AutomationPracticeTestBase {
 		
 		assertEquals(expected[1], page3.readLoginError());
 	}
+	
+	@Test
+	public void needsAddressForCheckout() {
+		String expectedURL = "http://automationpractice.com/index.php?controller=order&multi-shipping=";
+		
+		AutomationShoppingCartAddress page = LoginModule.login(getDriver(), this.baseURL).
+				clickDressesButton().
+				addPrintedDressToCart().
+				clickProceedButton();
+		
+		String[] expectedArr = page.getAddList();
+		String[] delivArr = page.getAddDeliv();
+		String[] invoiArr = page.getAddInvoi();
+		
+		for (int i = 1; i < expectedArr.length; i++) {
+			assertEquals(expectedArr[i], delivArr[i]);
+			assertEquals(expectedArr[i], invoiArr[i]);
+		}
+		
+		AutomationCheckoutShipping page2 = page.clickProceedButton();
+		
+		page2.toggleTermsBox();
+		
+		assertEquals(true, page2.getBoxStatus());
+		
+		page2.clickProceedButton();
+		
+		String currURL = getDriver().getCurrentUrl();
+		
+		assertEquals(expectedURL, currURL);
+	}
+	
+	@Test
+	public void needsTermsAgreement() {
+		String expected = "You must agree to the terms of service before continuing.";
+		
+		AutomationCheckoutShipping page = LoginModule.login(getDriver(), this.baseURL).
+				clickDressesButton().
+				addPrintedDressToCart().
+				clickProceedButton().
+				clickProceedButton();
+		
+		assertEquals(false, page.getBoxStatus());
+		
+		page.tryProceedButton();
+		
+		assertEquals(expected, page.getTermsError());
+	}
 }

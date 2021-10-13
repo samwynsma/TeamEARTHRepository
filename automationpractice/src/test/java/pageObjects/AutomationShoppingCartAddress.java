@@ -10,6 +10,7 @@ import frameworks.PageObject;
 public class AutomationShoppingCartAddress extends PageObject {
 	
 	private String[] addList = {
+			"",
 			"Jacob Kal", 
 			"123 Easy St", 
 			"Bellevue, Washington 98013", 
